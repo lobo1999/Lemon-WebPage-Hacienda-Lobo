@@ -787,7 +787,7 @@ button {
   inset: 0;
 }
 
-.product-criollo .product-background {
+.product-mandarina .product-background {
   background:
     radial-gradient(circle at 30% 30%, rgba(233, 242, 198, 0.6), transparent 27%),
     linear-gradient(145deg, #9aac61, #415527);
@@ -799,41 +799,38 @@ button {
     linear-gradient(140deg, #dac86b, #65702e);
 }
 
-.product-dried .product-background {
+.product-zumo .product-background {
   background:
     radial-gradient(circle at 70% 30%, rgba(255, 245, 219, 0.55), transparent 30%),
     linear-gradient(140deg, #d9c6a1, #8c7443);
 }
 
+/* Show complete product photographs without cropping or color filters. */
 .product-image {
   position: absolute;
-  width: 140%;
-  max-width: none;
-  height: 118%;
-  object-fit: cover;
-  mix-blend-mode: multiply;
-  filter: saturate(0.8) contrast(1.05);
-  opacity: 0.92;
+  top: 12%;
+  left: 6%;
+  width: 88%;
+  height: 76%;
+  object-fit: contain;
+  object-position: center;
   transform: translateZ(45px);
 }
 
-.product-image-criollo {
-  top: -8%;
-  left: -21%;
-  object-position: 25% center;
+.product-zumo .product-background {
+  background: #fff;
 }
 
-.product-image-mesino {
-  top: -9%;
-  left: -18%;
-  object-position: 58% center;
+.product-zumo .product-category {
+  background: #0d2c1d;
 }
 
-.product-image-dried {
-  top: -10%;
-  left: -28%;
-  object-position: 84% center;
-  filter: sepia(0.14) saturate(0.8) contrast(1.04);
+.product-zumo .product-visual-label {
+  color: #0d2c1d;
+}
+
+.product-zumo .product-number {
+  color: rgba(13, 44, 29, 0.18);
 }
 
 .product-visual::after {
