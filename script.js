@@ -1,5 +1,20 @@
 const WHATSAPP_NUMBER = "50685427529";
 
+// A click is an inquiry attempt, not a completed order. Configure the matching
+// custom event in Google Tag Manager before reporting it as an analytics event.
+document.addEventListener("click", (event) => {
+  const link = event.target.closest?.("a[href]");
+  if (!link) return;
+  const url = new URL(link.href, window.location.href);
+  if (url.hostname !== "wa.me") return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "whatsapp_click",
+    page_path: window.location.pathname,
+    link_text: link.textContent.trim() || link.getAttribute("aria-label") || "WhatsApp",
+  });
+});
+
 const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector(".menu-toggle");
 const mobileNavigation = document.querySelector(".mobile-nav");
